@@ -22,6 +22,9 @@
 
 
 
+
+
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Blog Post</a>
@@ -55,6 +58,27 @@
     </div>
   </div>
 </nav>
+
+
+
+
+{% if user.is_authenticated %}
+<p> Xush kelibsiz, {{ user.username }}!😊</p>
+
+
+<p>
+<a href="{% url 'logout' %}">Saytdan chiqib ketish</a>
+</p>
+{% else %}
+<p>
+<a href="{% url 'login' %}">Saytga kirish</a> |
+<a href="{% url 'signup' %}">Ro'yxatdan o'tish</a>
+
+</p>
+
+
+
+{% endif %}
 <body>
 
 <footer>
@@ -81,6 +105,11 @@
 <h1>Created by Shahrizoda</h1>
 
 </footer>
+
+
+
+
+
 
 </body>
 </html>
